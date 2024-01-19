@@ -53,7 +53,7 @@ void good(void){
 void torch(void){
     if (gamer.torch == false){   
         printf("Here is a torch!\n");
-        printf("Do you want to lit your torch?\n");
+        printf("Do you want to take the torch?\n");
         printf("1. Let's go!\n");
         printf("2. Yeah, no. It's more challenging like that.\n");
         int choice = 0;
@@ -61,7 +61,8 @@ void torch(void){
         switch(choice){
             case 1:
                 printf("You can finally see in front of your feet. \n");
-                gamer.litTorch = true;
+                gamer.torch = true;
+                start.torch = false;
                 break;
             case 2:
                 printf("I mean, why not\n");
