@@ -1,7 +1,5 @@
 #include "game.h"
 #include "choices.h"
-#include "right.h"
-
 void menu(void);
 
 
