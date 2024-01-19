@@ -31,8 +31,6 @@ void outWay(void);
 void MidLeft(void);
 void topPath(void);
 
-
-
 void runWalk(void){             // go to the light run or walk
     printf("But, would you like to run to the light source or go carefully?\n");
     printf("1. Run\n");
@@ -44,7 +42,6 @@ void runWalk(void){             // go to the light run or walk
     switch(choice){
         case 1:
             drop();
-            torch();
             break;
         case 2:
             printf("This was a safe choice, you avoid a root on the ground.\n");
@@ -288,6 +285,7 @@ void artRoom(void){
 }
 
 void MidLeft(void ){        // 6 from 12
+    gamer.place = 6;
     if (gamer.torch == false){
         printf("You finally can see somthing here thanks to this torch on the wall\n");
         torch();
@@ -787,7 +785,7 @@ void endEnd(void){
     printf("While moving the painting, you feel a breeze\n");
     printf("You also start seeing the light of the day\n");
     printf("You are finally out of this maze\n");
-    printf("Congratulation, you will not die in this maze!");
+    printf("Congratulation, you will not die in this maze!\n");
     if (gamer.treasure == true){
         printf("You got out with %d health points and some tresure\n", gamer.hp);
         good();
