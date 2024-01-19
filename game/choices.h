@@ -123,8 +123,8 @@ void leftCorri(void){ // from 2 to 4
     printf("You are now at a turning point\n");
     printf("What do you want to do?\n");
     printf("1. The room in front of you \n");
-    printf("2.The corridor in your left\n");
-    printf("3.Turn back\n");    
+    printf("2. The corridor in your left\n");
+    printf("3. Turn back\n");    
     choiceBotRight();
 }
 
@@ -556,7 +556,22 @@ void mapFollow(void){
     printf("\n1. The room in your right\n");
     printf("2. The corridor in front of you\n");
     printf("3. The corridor on your left\n");
-    choiceBotRight();
+    int choice = 0;
+        scanf( "%d", &choice);
+        switch(choice){
+            case 1:                     
+                bigRoom();
+                break;
+            case 2:
+                rightCorri();   
+                break;
+            case 3:
+                entranceRight();
+                break;
+            default:
+                choiceBotRight();
+                break;
+        }
 }
 
 void choiceBotRight(void){
@@ -583,22 +598,22 @@ void bigRoom (void){
     printf("1. Explore the room \n");
     printf("2. Leave the room\n");
     int choice = 0;
-        scanf( "%d", &choice);
-        switch(choice){
-            case 1:                     
-                bigExplore();
-                break;
-            case 2:
-                printf("What do you want to do?\n");
-                printf("\n1. Try the room again?\n");
-                printf("2. The corridor on your right\n");
-                printf("3. The corridor in front of you\n");
-                choiceBotRight();   
-                break;
-            default:
-                bigRoom();
-                break;
-        }
+    scanf( "%d", &choice);
+    switch(choice){
+        case 1:                     
+            bigExplore();
+            break;
+        case 2:
+            printf("What do you want to do?\n");
+            printf("\n1. Try the room again?\n");
+            printf("2. The corridor on your right\n");
+            printf("3. The corridor in front of you\n");
+            choiceBotRight();   
+            break;
+        default:
+            bigRoom();
+            break;
+    }
 }
 void bigExplore(void){
     if (gamer.torch == true){
@@ -775,7 +790,9 @@ void endEnd(void){
     printf("Congratulation, you will not die in this maze!");
     if (gamer.treasure == true){
         printf("You got out with %d health points and some tresure\n", gamer.hp);
+        good();
     }else {
         printf("You got out with %d health points and no treasure\n", gamer.hp);
+        good();
     }
 }

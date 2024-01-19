@@ -44,6 +44,9 @@ void dead(void){
     printf("GAME OVER");
     return;
 }
+void good(void){
+    return;
+}
 // ***********************************
 
 
